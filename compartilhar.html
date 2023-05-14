@@ -7,10 +7,26 @@
     <title>Tela de Compartilhamento de link</title>
 </head>
 <body>
-    <h1>Tela de Compartilhamento de link</h1>
+    <h1>Gerar Páginas em HTML</h1>
     <h2>Coloque o link abaixo</h2>
-    <input type="text" name="link" id="link" >
-    <label for=""></label>
+    <label for=""> Link: 
+        <input autofocus type="text" name="recebelink" id="recebelink">
+    </label>
+    <!-- input autofocus serve para já iniciar a página com o foco no input-->
+    <label for="">
+        <input type="button" value="Gerar Páginas" onclick="gerarPagina()">
+    </label>
+    <div id="resultado1">
+
+    </div>
+
+    <div id="resultado2">
+
+    </div>
+
     
+
+    <script src="compartilhar.js"></script>
+        
 </body>
 </html>
