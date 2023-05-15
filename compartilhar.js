@@ -5,7 +5,7 @@ function texto() {
 
     let qrcode = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${foco1}`;
     
-    const texto = divResultado1.innerHTML =  `
+    const texto = innerHTML =  `
                                             <!DOCTYPE html>
                                             <html lang="pt-br">
                                             <head>
@@ -56,15 +56,14 @@ function texto() {
                                         
                                         `
 
-    window.alert('2--->' +foco1) 
+    const date = new Date().toLocaleString();
+    const nomeArquivo = date
     
-    gerarPagina2(texto,"qrcode.html")
+    gerarPagina2(texto, nomeArquivo+"___qrcode.html")
 }
 
 //gerar o arquivo no computador
 function gerarPagina2(content=texto, filename="qrcode.html", contentType){
-
-    window.alert('3--->'+texto)
 
     if(!contentType){
         contentType = 'application/octet-stream';
@@ -78,7 +77,3 @@ function gerarPagina2(content=texto, filename="qrcode.html", contentType){
     //navigator.clipboard.writeText(texto) //copia para a area de trabalho                     
 
 }
-
-
-
-
