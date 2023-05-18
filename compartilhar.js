@@ -1,12 +1,12 @@
 function texto() {
-    window.alert('QR code')
-    const foco1 = String(document.getElementById("recebelink").value) //transformar o obejto html em string
-    const divResultado1 = document.getElementById("resultado1")
-    const divResultado2 = document.getElementById("resultado2")
+    //window.alert('QR code')
+    let foco1 = String(document.getElementById("recebelink").value) //transformar o obejto html em string
+    let divResultado1 = document.getElementById("resultado1")
+    let divResultado2 = document.getElementById("resultado2")
 
     let qrcode = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${foco1}`;
     
-    const texto = innerHTML =  `
+    let texto = innerHTML =  `
                                             <!DOCTYPE html>
                                             <html lang="pt-br">
                                             <head>
@@ -57,8 +57,8 @@ function texto() {
                                         
                                         `
 
-    const date = new Date().toLocaleString();
-    const nomeArquivo = date
+    let date = new Date().toLocaleString();
+    let nomeArquivo = date
     
     gerarPagina2(texto, nomeArquivo+"___qrcode.html")
 }
@@ -67,15 +67,20 @@ function texto() {
 
 
 function whatsApp() {
+    
     window.alert('WhatsApp')
-    window.alert('QR code')
-    const foco1 = String(document.getElementById("recebelink").value) //transformar o obejto html em string
-    const divResultado1 = document.getElementById("resultado1")
-    const divResultado2 = document.getElementById("resultado2")
 
+
+    let foco2 = String(document.getElementById("recebelink").value) //transformar o obejto html em string
+    let divResultado1 = document.getElementById("resultado1")
+    let divResultado2 = document.getElementById("resultado2")
+
+   
     
-    
-    const texto = divResultado1.innerHTML =  `
+
+    //gerarLinkwhats(foco2)
+       
+    let texto = divResultado1.innerHTML =  `
                                             <!DOCTYPE html>
                                             <html lang="pt-br">
                                             <head>
@@ -114,30 +119,60 @@ function whatsApp() {
                                             <body>
                                                 <h1 id="h1">Cartão de Visita Virtual</h1>
                                                 <h2 >Compartilhe via <strong>WhatsApp<strong></h2>
+                                                <p>Link do Cartão: ${foco2}</p>
+                                                <div>
+                                                    <input autofocus type="number" style="height: 40px; width:50%;" name="tel" id="tel"   placeholder=" Celular com DDD * (Obrigatório)" >
+                                                </div>
+                                                <div>
+                                                    <input style="height: 40px; width:50%;" name="men" id="men"   placeholder=" Mensagem Padrão (Opcional)" >
+                                                </div>
+                                                <div>
+                                                    <input style="width:50%; font-size: 1.2em ; font-weight: bold; color: #FFFFFF; height: 40px; background-color: #008000" type="button" value="Gerar WhatsApp" onclick="gerarLinkwhats('${foco2}')}"
+                                                </div>
+                                                <div style="padding-top: 100px;">
+                                                    <a href="https://cartaovirtualdevisita.com.br/" target="_blank">
+                                                        <img id="logo" src="https://cdn.fernandoalonso.hosting.dousvies.com/wp-content/uploads/sites/32/2021/12/31002033/logotipo-Cartao-de-Visita-Virtual.png" alt="Cartão de Visita Virtual">
+                                                    </a>
+                                                </div>
+                                                    
+                                                <script>
+                                                    function  gerarLinkwhats (foco5) {
+
+                                                        window.alert('foco dentro da função  = ' + foco5)
+                                                        window.alert('foco tipo dentro da função = ' + typeof(foco5))
+                                                        
+                                                        let link = foco5
+                                                        let telefone = Number(window.document.getElementById("tel").value)
+                                                        let mensagem = String(window.document.getElementById("men").value)
+                                            
+                                                        window.alert('lin0 = ' + link)
+                                                        window.alert('tel1 = ' + telefone)
+                                                        window.alert('men2 = ' + mensagem)
+                                            
+                                                        window.open("https://wa.me/+55"+telefone+"?text="+mensagem+" - Segue o link do meu cartão - "+link)
+                                        
+                                        
+                                                    }
                                                 
-                                                <div>
-                                                    <input style="height: 40px; width:50%;" name="tel" id="telefone"   placeholder=" Celular com DDD * (Obrigatório)" >
-                                                </div>
-                                                <div>
-                                                    <input style="height: 40px; width:50%;" name="tel" id="mensagem"   placeholder=" Mensagem Padrão (Opcional)" >
-                                                </div>
-                                                <div style="padding-top: 100px;"> <a href="https://cartaovirtualdevisita.com.br/" target="_blank"><img id="logo" src="https://cdn.fernandoalonso.hosting.dousvies.com/wp-content/uploads/sites/32/2021/12/31002033/logotipo-Cartao-de-Visita-Virtual.png" alt="Cartão de Visita Virtual"></a> </div>
+                                                </script>
+                                                
+
 
                                             </body>
                                             </html>
                                         
                                         `
 
-    const date = new Date().toLocaleString();
-    const nomeArquivo = date
+    
+
+    
+    let date = new Date().toLocaleString();
+    let nomeArquivo = date
     
     gerarPagina2(texto, nomeArquivo+"___whatsapp.html")
+
+    
 }
-
-
-
-
-
 
 
 
@@ -156,3 +191,41 @@ function gerarPagina2(content=texto, filename="qrcode.html", contentType){
     //navigator.clipboard.writeText(texto) //copia para a area de trabalho                     
 
 }
+
+
+
+ /*      function  gerarLinkwhats (foco5) {
+
+            window.alert('foco dentro da função  = ' + foco5)
+            window.alert('foco tipo dentro da função = ' + typeof(foco5))
+            
+            let link = foco5
+            let telefone = Number(window.document.getElementById("tel").value)
+            let mensagem = String(window.document.getElementById("men").value)
+
+            window.alert('lin0 = ' + link)
+            window.alert('tel1 = ' + telefone)
+            window.alert('men2 = ' + mensagem)
+
+            window.open("https://wa.me/+55"+telefone+"?text="+mensagem+" - Segue o link do meu cartão - "+link)
+
+
+        }*/
+    
+
+/*<script>
+                                                    function gerarLinkwhats(foco) {
+                
+                                                        let link = foco
+                                                        let telefone = Number(window.document.getElementById("tel").value)
+                                                        let mensagem = String(window.document.getElementById("men").value)
+                                            
+                                                        window.alert('lin0 = ' + link)
+                                                        window.alert('tel1 = ' + telefone)
+                                                        window.alert('men2 = ' + mensagem)
+                                            
+                                                        window.open("https://wa.me/+55"+telefone+"?text="+mensagem+" - Segue o link do meu cartão - "+link)
+                                            
+                                            
+                                                    }                                                                                                                                         
+                                                </script>*/ 
