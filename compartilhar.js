@@ -82,7 +82,7 @@ function whatsApp() {
 
     //gerarLinkwhats(foco2)
        
-    let texto = divResultado1.innerHTML =  `
+    let texto = innerHTML =  `
                                             <!DOCTYPE html>
                                             <html lang="pt-br">
                                             <head>
@@ -138,21 +138,10 @@ function whatsApp() {
                                                 </div>
                                                     
                                                 <script>
-                                                    function  gerarLinkwhats () {
-
-                                                        
-                                                        
-                                                        let span = String(window.document.getElementById("span1").value)
+                                                    function  gerarLinkwhats (span = "${foco2}") {
                                                         let telefone = Number(window.document.getElementById("tel").value)
-                                                        let mensagem = String(window.document.getElementById("men").value)
-                                            
-                                                        window.alert('lin0 = ' + span)
-                                                        window.alert('tel1 = ' + telefone)
-                                                        window.alert('men2 = ' + mensagem)
-                                            
-                                                        window.open("https://wa.me/+55"+telefone+"?text="+mensagem+" - Segue o link do meu cartão - "+span)
-                                        
-                                        
+                                                        let mensagem = String(window.document.getElementById("men").value)                                                                                                 
+                                                        window.open("https://wa.me/+55"+telefone+"?text="+mensagem+" - Segue o link do meu cartão - "+span, "_blank")
                                                     }
                                                 
                                                 </script>
@@ -192,41 +181,3 @@ function gerarPagina2(content=texto, filename="qrcode.html", contentType){
     //navigator.clipboard.writeText(texto) //copia para a area de trabalho                     
 
 }
-
-
-
- /*      function  gerarLinkwhats (foco5) {
-
-            window.alert('foco dentro da função  = ' + foco5)
-            window.alert('foco tipo dentro da função = ' + typeof(foco5))
-            
-            let link = foco5
-            let telefone = Number(window.document.getElementById("tel").value)
-            let mensagem = String(window.document.getElementById("men").value)
-
-            window.alert('lin0 = ' + link)
-            window.alert('tel1 = ' + telefone)
-            window.alert('men2 = ' + mensagem)
-
-            window.open("https://wa.me/+55"+telefone+"?text="+mensagem+" - Segue o link do meu cartão - "+link)
-
-
-        }*/
-    
-
-/*<script>
-                                                    function gerarLinkwhats(foco) {
-                
-                                                        let link = foco
-                                                        let telefone = Number(window.document.getElementById("tel").value)
-                                                        let mensagem = String(window.document.getElementById("men").value)
-                                            
-                                                        window.alert('lin0 = ' + link)
-                                                        window.alert('tel1 = ' + telefone)
-                                                        window.alert('men2 = ' + mensagem)
-                                            
-                                                        window.open("https://wa.me/+55"+telefone+"?text="+mensagem+" - Segue o link do meu cartão - "+link)
-                                            
-                                            
-                                                    }                                                                                                                                         
-                                                </script>*/ 
