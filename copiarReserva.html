@@ -46,22 +46,22 @@
         <input style="height: 40px; width:50%;" name="men" id="men"  value="${foco3}" >
     </div>
     <div>
-        <input id="tcpy" style="width:50%; font-size: 1.2em ; font-weight: bold; color: #FFFFFF; height: 40px; background-color: #79239D" type="button" value="Clique para copiar xxx" onclick="copiarTexto()">
+        <input id="tcpy" style="width:50%; font-size: 1.2em ; font-weight: bold; color: #FFFFFF; height: 40px; background-color: #79239D" type="button" value="Clique para copiar" onclick="copiarTexto()">
     </div>
     
     <div> <a href="https://cartaovirtualdevisita.com.br/" target="_blank"><img id="logo" src="https://cdn.fernandoalonso.hosting.dousvies.com/wp-content/uploads/sites/32/2021/12/31002033/logotipo-Cartao-de-Visita-Virtual.png" alt="Cartão de Visita Virtual"></a> </div>
 <script>
     
     function copiarTexto() {
-        const men=String(document.getElementById("men").value) //pega o valor da mensagem
-        const tcpy=document.getElementById("tcyp") //clique do botão
-        window.alert('texto copiado -> ' + men)
-        window.alert('texto copiado -> ' + tcpy)
+        const men=String(document.getElementById("men").value) 
+        const tcpy=document.getElementById("tcyp")
 
-        tcpy.addEventListener("click", (evt)=>{
-            navigator.clipboard.
+        navigator.clipboard.writeText(men).then(() => {
+            alert("Texto copiado com sucesso!");
         })
-
+        .catch(() => {
+            alert("Error...");
+        })
     }
 </script>
 
